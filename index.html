@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURITY ALERT </title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            background-color: #0a0a0a;
+            color: #ff3333;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .card {
+            background-color: #141414;
+            border: 2px solid #ff3333;
+            box-shadow: 0 0 25px rgba(255, 51, 51, 0.4);
+            border-radius: 8px;
+            max-width: 650px;
+            width: 100%;
+            padding: 40px;
+            text-align: center;
+        }
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        h1 {
+            font-size: 2rem;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        p {
+            color: #d1d1d1;
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .timer-box {
+            background: #220000;
+            border: 1px dashed #ff3333;
+            padding: 15px;
+            margin: 20px 0;
+            font-size: 1.2rem;
+            color: #ff6666;
+        }
+        .watermark {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 6px 14px;
+            background-color: #ff3333;
+            color: #000;
+            font-weight: bold;
+            font-size: 0.85rem;
+            border-radius: 3px;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+   
+ <div class="card">
+	<h1>YOU HAVE BEEN HACKED!</h1>
+        <div class="icon">⚠️</div>
+	<h1>Your files have been encrypted.</h1>
+        <p>All your documents, photos, databases, and critical system files have been locked using strong cryptographic algorithms.</p>
+        <div class="timer-box">
+            Time Remaining: <span id="timer">47:59:59</span>
+        </div>
+        <p>Do not attempt to modify or rename encrypted files, as this may lead to permanent data loss. In order to retreive your files, You must send 500 BTC to this address. Failure to do so will result in your data being permanently lost. [ERR: INVALID LINK}</p>
+    </div>
+
+    <script>
+        // Simple mock countdown timer display
+        let totalSeconds = 172799;
+        setInterval(() => {
+            if (totalSeconds <= 0) return;
+            totalSeconds--;
+            let h = Math.floor(totalSeconds / 3600);
+            let m = Math.floor((totalSeconds % 3600) / 60);
+            let s = totalSeconds % 60;
+            document.getElementById('timer').innerText = 
+                `${String(h).padStart(2, '0')}:${String(m).padStart(2, '0')}:${String(s).padStart(2, '0')}`;
+        }, 1000);
+    </script>
+</body>
+</html>
